@@ -110,10 +110,12 @@ public class BatchProcessing {
 		/*
 		 * Scan all "namespace" and "set to retrieve each record
 		 */
-		this.client.scanAll(null, this.namespace, this.set, new ScanCallback() {
-			
+		this.client.scanAll(null, this.namespace, this.set, 
+				new ScanCallback() {
+
 			@Override
-			public void scanCallback(Key key, Record record) throws AerospikeException {
+			public void scanCallback(Key key, Record record) 
+					throws AerospikeException {
 				/*
 				 * process each Record into a "batch" 
 				 */
@@ -130,9 +132,10 @@ public class BatchProcessing {
 				}
 				batchOfRecords.add(record);
 			}
-		}, "username","password","gender","region","lasttweeted","tweetcount","interests");
+		}, "username","password","gender","region",
+			"lasttweeted","tweetcount","interests");
 	}
-	
+
 	public void generateData(){
 		String[] genders = { "m", "f" };
 		String[] regions = { "n", "s", "e", "w" };

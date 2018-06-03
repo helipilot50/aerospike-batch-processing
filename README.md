@@ -1,9 +1,9 @@
 # Aerospike Batch Processing
 
-##Problem
+## Problem
 You want to process all of the records, perhaps billions of records, in an Aerospike database. You don't have heap space in you application to process them all at once, so you would like to "batch  process" them, 1,000 at a time.  
 
-##Solution
+## Solution
 Use the Aerospike `scanAll()` method to scan the entire namespace, or namespace and set. Each record is retrieved from a buffered queue one at a time. You can collect the returned records into a "batch", and then process the batch of records.
 
 The source code for this solution is available on GitHub, and the README.md 
@@ -45,7 +45,7 @@ To run the batch processing, uses the same command without any options
 java -jar aerospike-batch-processing-1.0.0-full.jar
 ```
 
-##Discussion
+## Discussion
 
 
 So how does it work? 
